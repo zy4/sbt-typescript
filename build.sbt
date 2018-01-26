@@ -26,13 +26,14 @@ organization := "com.arpnetworking"
 
 name := "sbt-typescript"
 
-scalaVersion := "2.10.5"
+scalaVersion := "2.10.7"
+crossScalaVersions := Seq("2.12.4", "2.11.12", "2.10.7")
 
 lazy val root = (project in file(".")).enablePlugins(SbtWeb)
 
 libraryDependencies ++= Seq(
   "org.webjars.npm" % "typescript" % "2.6.2",
-  "com.typesafe" % "jstranspiler" % "1.0.0"
+  "com.typesafe" % "jstranspiler" % "1.0.1"
 )
 
 resolvers ++= Seq(
@@ -43,7 +44,7 @@ resolvers ++= Seq(
   "Typesafe Snapshots Repository" at "http://repo.typesafe.com/typesafe/snapshots/"
 )
 
-addSbtPlugin("com.typesafe.sbt" %% "sbt-js-engine" % "1.1.3")
+addSbtPlugin("com.typesafe.sbt" %% "sbt-js-engine" % "1.2.2")
 
 scalacOptions += "-feature"
 
